@@ -1,0 +1,17 @@
+{
+  "version": "1.0.0-*",
+
+  "dependencies": {
+    "FluentAssertions": "4.19.0",
+    "MSTest.TestAdapter": "1.1.12",
+    "MSTest.TestFramework": "1.1.11",
+    "NETStandard.Library": "1.6.0",
+    "OneSignal.Client": "1.0.0-*"
+  },
+
+  "frameworks": {
+    "netstandard1.6": {
+      "imports": "dnxcore50"
+    }
+  }
+}
