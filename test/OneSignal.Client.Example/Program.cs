@@ -12,13 +12,13 @@ namespace OneSignal.Client.Example
         {
             using (var client = new OneSignalClient("M2JiYmM4NzEtYTgxNy00NGU0LWIzODktMzFmNDI5YjRiODU5"))
             {
-                var apps = await client.Apps.View();
+                //var apps = await client.Apps.View();
                 
 
-                foreach (var app in apps)
-                {
+                //foreach (var app in apps)
+                //{
 
-                }
+                //}
             }
         }
     }
