@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace OneSignal.Client.Endpoints.App
+namespace OneSignal.Client.V1.Endpoints.App
 {
     public class AppsEndpoint : BaseEndpoint
     {
@@ -13,14 +13,14 @@ namespace OneSignal.Client.Endpoints.App
 
         public async Task<List<ViewAppResponse>> View()
         {
-            return await ExecuteGetAsync<List<ViewAppResponse>>("/apps");
+            return await ExecuteGetAsync<List<ViewAppResponse>>("apps");
         }
 
         public async Task<ViewAppResponse> View(string id)
         {
-            return await ExecuteGetAsync<ViewAppResponse>($"/apps/{id}");
+            return await ExecuteGetAsync<ViewAppResponse>($"apps/{id}");
         }
-        public void Create() { }
-        public void Update() { }
+        //public CreateAppResponse Create(CreateAppRequest request) { }
+        //public CreateAppResponse Update() { }
     }
 }

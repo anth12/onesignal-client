@@ -1,5 +1,5 @@
 ﻿
-namespace OneSignal.Client
+namespace OneSignal.Client.V1
 {
     public enum DeviceType
     {

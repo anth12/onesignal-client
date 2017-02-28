@@ -1,5 +1,5 @@
 ﻿
-namespace OneSignal.Client.Endpoints
+namespace OneSignal.Client.V1.Endpoints
 {
     public class NotificationsEndpoint : BaseEndpoint
     {

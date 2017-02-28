@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Net.Http;
-using OneSignal.Client.Endpoints;
-using OneSignal.Client.Endpoints.App;
+using OneSignal.Client.V1.Endpoints;
+using OneSignal.Client.V1.Endpoints.App;
 
-namespace OneSignal.Client
+namespace OneSignal.Client.V1
 {
     public class OneSignalClient : IDisposable
     {
         private string _apiKey;
-        internal const string ApiEndpoint = "https://onesignal.com/api/v1";
+        internal const string ApiEndpoint = "https://onesignal.com/api/v1/";
         internal HttpClient HttpClient;
 
         public OneSignalClient(string apiKey)

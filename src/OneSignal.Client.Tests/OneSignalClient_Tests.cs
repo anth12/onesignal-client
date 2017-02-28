@@ -1,14 +1,12 @@
-﻿using System;
 using FluentAssertions;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using OneSignal.Client.V1;
+using Xunit;
 
 namespace OneSignal.Client.Tests
 {
-    
-    [TestClass]
     public class OneSignalClient_Tests
     {
-        [TestMethod]
+        [Fact]
         public async void Can_connect()
         {
             using (var client = new OneSignalClient("M2JiYmM4NzEtYTgxNy00NGU0LWIzODktMzFmNDI5YjRiODU5"))

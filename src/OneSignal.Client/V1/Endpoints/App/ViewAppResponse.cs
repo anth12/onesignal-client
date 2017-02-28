@@ -1,7 +1,7 @@
 ﻿using System;
 using Newtonsoft.Json;
 
-namespace OneSignal.Client.Endpoints.App
+namespace OneSignal.Client.V1.Endpoints.App
 {
     public class ViewAppResponse
     {

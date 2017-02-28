@@ -3,7 +3,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 
-namespace OneSignal.Client.Endpoints
+namespace OneSignal.Client.V1.Endpoints
 {
     public abstract class BaseEndpoint
     {
