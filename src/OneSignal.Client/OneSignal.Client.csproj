@@ -2,10 +2,20 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard1.4</TargetFramework>
+    <Version>0.0.1</Version>
+    <Authors>Anthony Halliday</Authors>
+    <Company>The Pixel Forge</Company>
+    <Description>OneSignal REST API Client</Description>
+    <PackageProjectUrl>https://github.com/anth12/onesignal-client</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/anth12/onesignal-client</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>onesignal,rest-client</PackageTags>
+    <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/anth12/onesignal-client/master/LICENSE</PackageLicenseUrl>
+    <PackageId>OneSignal.Client</PackageId>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="FluentAssertions" Version="4.19.0" />
     <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
   </ItemGroup>
 

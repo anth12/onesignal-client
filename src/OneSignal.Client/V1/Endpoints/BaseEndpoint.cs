@@ -2,6 +2,8 @@
 using System.Net.Http;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using OneSignal.Client.V1.Error;
+using OneSignal.Client.Utilities;
 
 namespace OneSignal.Client.V1.Endpoints
 {
@@ -27,53 +29,72 @@ namespace OneSignal.Client.V1.Endpoints
             return JsonConvert.DeserializeObject<TReturn>(json);
         }
 
-        protected async Task<TReturn> ExecutePostAsync<TReturn, TParam>(string apiPath, TParam parameters)
+        protected async Task<TReturn> ExecutePostAsync<TReturn>(string apiPath, object parameters)
         {
-            var requestContent = new StringContent("");
+            var requestContent = new FormUrlEncodedContent(parameters.ToKeyValue());
+
+            //var requestContent = new StringContent(JsonConvert.SerializeObject(parameters));
+            var response = await Parent.HttpClient.PostAsync(apiPath, requestContent);
+
+
+            var json = await response.Content.ReadAsStringAsync();
+
+            if (response.StatusCode == HttpStatusCode.BadRequest)
+            {
+                throw new OneSignalApiException(
+                    JsonConvert.DeserializeObject<ErrorResponse>(json)
+                );
+            }
+            if (response.StatusCode != HttpStatusCode.OK)
+            {
+                throw new HttpRequestException(response.StatusCode.ToString());
+            }
+            
+            return JsonConvert.DeserializeObject<TReturn>(json);
+        }
+
+        protected async Task<TReturn> ExecutePutAsync<TReturn>(string apiPath, object parameters)
+        {
+            var requestContent = new FormUrlEncodedContent(parameters.ToKeyValue());
 
             var response = await Parent.HttpClient.PostAsync(apiPath, requestContent);
 
 
+            var json = await response.Content.ReadAsStringAsync();
+
+            if (response.StatusCode == HttpStatusCode.BadRequest)
+            {
+                throw new OneSignalApiException(
+                    JsonConvert.DeserializeObject<ErrorResponse>(json)
+                );
+            }
             if (response.StatusCode != HttpStatusCode.OK)
             {
-                throw new HttpRequestException();
+                throw new HttpRequestException(response.StatusCode.ToString());
             }
-
-            var json = await response.Content.ReadAsStringAsync();
 
             return JsonConvert.DeserializeObject<TReturn>(json);
         }
 
-        protected async Task<TReturn> ExecutePutAsync<TReturn, TParam>(string apiPath, TParam parameters)
+        protected async Task<TReturn> ExecuteDeleteAsync<TReturn>(string apiPath)
         {
-            var requestContent = new StringContent("");
+            //var requestContent = new FormUrlEncodedContent(parameters.ToKeyValue());
 
-            var response = await Parent.HttpClient.PostAsync(apiPath, requestContent);
+            var response = await Parent.HttpClient.DeleteAsync(apiPath);
 
-
-            if (response.StatusCode != HttpStatusCode.OK)
-            {
-                throw new HttpRequestException();
-            }
 
             var json = await response.Content.ReadAsStringAsync();
 
-            return JsonConvert.DeserializeObject<TReturn>(json);
-        }
-
-        protected async Task<TReturn> ExecuteDeleteAsync<TReturn, TParam>(string apiPath, TParam parameters)
-        {
-            var requestContent = new StringContent("");
-
-            var response = await Parent.HttpClient.PostAsync(apiPath, requestContent);
-
-
+            if (response.StatusCode == HttpStatusCode.BadRequest)
+            {
+                throw new OneSignalApiException(
+                    JsonConvert.DeserializeObject<ErrorResponse>(json)
+                );
+            }
             if (response.StatusCode != HttpStatusCode.OK)
             {
-                throw new HttpRequestException();
+                throw new HttpRequestException(response.StatusCode.ToString());
             }
-
-            var json = await response.Content.ReadAsStringAsync();
 
             return JsonConvert.DeserializeObject<TReturn>(json);
         }

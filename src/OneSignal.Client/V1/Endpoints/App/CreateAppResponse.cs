@@ -5,7 +5,7 @@ namespace OneSignal.Client.V1.Endpoints.App
 {
     public class CreateAppResponse
     {
-       [JsonProperty("id")]
+        [JsonProperty("id")]
         public string Id { get; set; }
 
         [JsonProperty("name")]

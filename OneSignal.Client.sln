@@ -3,11 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26206.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OneSignal.Client", "src\OneSignal.Client\OneSignal.Client.csproj", "{B141CFE0-77A4-48BE-9E92-5B3F90563E86}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OneSignal.Client", "src\OneSignal.Client\OneSignal.Client.csproj", "{B141CFE0-77A4-48BE-9E92-5B3F90563E86}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{891EF370-2140-4884-96B2-ECBB2F643D90}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OneSignal.Client.Tests", "src\OneSignal.Client.Tests\OneSignal.Client.Tests.csproj", "{9B2E3AE6-E156-4DD7-81F5-BAAFE6F2DC0C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OneSignal.Client.Tests", "src\OneSignal.Client.Tests\OneSignal.Client.Tests.csproj", "{9B2E3AE6-E156-4DD7-81F5-BAAFE6F2DC0C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{B716EA74-DBA0-482F-B7B3-92CAD8B2EFAD}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
