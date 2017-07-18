@@ -3,7 +3,7 @@ using OneSignal.Client.Attributes;
 
 namespace OneSignal.Client.V1.Endpoints.App
 {
-    public class CreateAppRequest
+    public class ViewDevicesRequest
     {
         /// <summary>
         /// Required The name of your new app, as displayed on your apps list on the dashboard. This can be renamed later.

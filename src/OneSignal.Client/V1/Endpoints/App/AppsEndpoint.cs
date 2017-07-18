@@ -34,7 +34,7 @@ namespace OneSignal.Client.V1.Endpoints.App
         /// Creates a new OneSignal app
         /// </summary>
         /// <returns></returns>
-        public async Task<CreateAppResponse> Create(CreateAppRequest request)
+        public async Task<CreateAppResponse> Create(ViewDevicesRequest request)
         {
             return await ExecutePostAsync<CreateAppResponse>("apps", request);
         }
@@ -44,7 +44,7 @@ namespace OneSignal.Client.V1.Endpoints.App
         /// </summary>
         /// <param name="id">An app id</param>
         /// <returns></returns>
-        public async Task<CreateAppResponse> Update(string id, CreateAppRequest request)
+        public async Task<CreateAppResponse> Update(string id, ViewDevicesRequest request)
         {
             return await ExecutePutAsync<CreateAppResponse>($"apps/{id}", request);
         }        

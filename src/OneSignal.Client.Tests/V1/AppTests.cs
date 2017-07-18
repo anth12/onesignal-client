@@ -43,7 +43,7 @@ namespace OneSignal.Client.Tests.V1
             {
                 try
                 {
-                    var app = await client.Apps.Create(new CreateAppRequest());
+                    var app = await client.Apps.Create(new ViewDevicesRequest());
                 }catch(OneSignalApiException ex)
                 {
                     error = ex;
@@ -60,7 +60,7 @@ namespace OneSignal.Client.Tests.V1
             using (var client = new OneSignalClient(Constants.ApiKey))
             {
                 var name = "[test] " + Guid.NewGuid();
-                var app = await client.Apps.Create(new CreateAppRequest
+                var app = await client.Apps.Create(new ViewDevicesRequest
                 {
                     Name = name
                 });

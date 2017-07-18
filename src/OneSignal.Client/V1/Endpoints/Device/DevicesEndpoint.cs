@@ -9,8 +9,12 @@ namespace OneSignal.Client.V1.Endpoints
         {
         }
 
-        public void View() { }
-        public void View(Guid id) { }
+        public void View(string appId)
+        {
+
+        }
+
+        public void View(string id) { }
         public void Add() { }
         public void Edit() { }
     }
